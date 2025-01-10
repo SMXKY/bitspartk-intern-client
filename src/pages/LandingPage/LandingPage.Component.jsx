@@ -1,5 +1,10 @@
 import "./LandingPage.Styles.css";
+import { LandingPageHero } from "../../components/LandingPageHero/LandingPageHero.Component";
 
 export const LandingPage = () => {
-  return <div>landing page</div>;
+  return (
+    <div>
+      <LandingPageHero />
+    </div>
+  );
 };
