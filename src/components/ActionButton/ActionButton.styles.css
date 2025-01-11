@@ -1,0 +1,33 @@
+.action-btn button {
+  color: white;
+  background-color: var(--cta-color);
+  font-weight: 500;
+  font-size: 1.5rem;
+  border: none;
+  padding: 0.8rem 8rem;
+  border-radius: 0.7rem;
+  transition: ease-in-out 0.25s;
+  cursor: pointer;
+  border: solid 2px var(--cta-color);
+}
+
+.action-btn button:hover {
+  border: solid 2px var(--cta-color);
+  color: var(--cta-color);
+  background-color: white;
+}
+
+@media (max-width: 800px) {
+  .action-btn button {
+    font-size: 1rem;
+    padding: 0.6rem 4rem;
+  }
+}
+
+@media (max-width: 422px) {
+  .action-btn button {
+    font-size: 1rem;
+    padding: 0.4rem 2rem;
+    border-radius: 0.55rem;
+  }
+}

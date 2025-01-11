@@ -1,0 +1,90 @@
+.landing-page-action-btns {
+  /* background-color: red; */
+  padding-left: 10rem;
+  margin-top: 2rem;
+}
+
+.already-an-intern-login-link {
+  position: relative;
+  color: var(--cta-color);
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.8rem 0rem;
+  /* transition: ease-in-out 0.25s; */
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 4rem;
+  /* text-decoration: none; */
+}
+
+.already-an-intern-login-link span {
+  font-weight: bold;
+}
+
+.already-an-intern-login-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--cta-color);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.already-an-intern-login-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+@media (max-width: 1000px) {
+  .landing-page-action-btns {
+    padding-left: 4rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .landing-page-action-btns {
+    padding-left: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .already-an-intern-login-link {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .landing-page-action-btns {
+    padding-left: 6rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 556px) {
+  .landing-page-action-btns {
+    padding-left: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 422px) {
+  .landing-page-action-btns {
+    padding-left: 1rem;
+    margin-top: 0rem;
+  }
+}
+
+@media (max-width: 344px) {
+  .landing-page-action-btns {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .already-an-intern-login-link {
+    margin-left: 0rem;
+    width: fit-content;
+  }
+}
