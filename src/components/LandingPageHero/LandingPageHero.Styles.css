@@ -5,6 +5,7 @@
   height: 55rem;
   /* border: solid red; */
   margin-top: -12rem;
+  position: relative;
 }
 
 .hero-img-holder {
@@ -24,7 +25,7 @@
   /* flex-shrink: 0; */
   position: absolute;
   bottom: 0rem;
-  opacity: 0.2;
+  opacity: 0.1;
   /* margin-right: 2vw; */
   /* margin-top: 8rem; */
   height: 34rem;
@@ -53,4 +54,269 @@
   );
   pointer-events: none;
   border-radius: 40px;
+}
+
+.hero-text {
+  position: absolute;
+  left: 10rem;
+  bottom: 13rem;
+}
+
+.hero-text .main-hero-text {
+  font-weight: 600;
+  font-size: 4rem;
+  color: white;
+  cursor: default;
+}
+
+.hero-text .sub-hero-text {
+  color: white;
+  font-size: 1.8rem;
+  cursor: default;
+  font-weight: 400;
+}
+
+.hero-text .hero-location {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-top: 0.8rem;
+}
+
+.hero-text .hero-location img {
+  margin-right: 0.8rem;
+}
+
+@media (max-width: 1184px) {
+  .hero-text {
+    left: 6rem;
+    bottom: 13rem;
+  }
+
+  .hero-text .main-hero-text {
+    font-size: 3.2rem;
+  }
+
+  .hero-text .sub-hero-text {
+    font-size: 1.3rem;
+  }
+
+  .hero-text .hero-location {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 956px) {
+  .hero-img {
+    position: absolute;
+    bottom: 0rem;
+    opacity: 0.1;
+    height: 30rem;
+    right: 2rem;
+  }
+
+  .hero-text {
+    left: 6rem;
+    bottom: 13rem;
+  }
+
+  .hero-text .main-hero-text {
+    font-size: 3.2rem;
+  }
+
+  .hero-text .sub-hero-text {
+    font-size: 1.3rem;
+  }
+
+  .hero-text .hero-location {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 792px) {
+  .hero-img {
+    opacity: 0.1;
+    height: 26rem;
+    right: 2rem;
+  }
+
+  .hero-text {
+    left: 5rem;
+    bottom: 13rem;
+  }
+
+  .hero-text .main-hero-text {
+    font-size: 3rem;
+  }
+
+  .hero-text .sub-hero-text {
+    font-size: 1.2rem;
+  }
+
+  .hero-text .hero-location {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .hero-img {
+    opacity: 0.1;
+    height: 22rem;
+    right: 2rem;
+  }
+
+  .hero-text {
+    left: 5rem;
+    bottom: 13rem;
+  }
+
+  .hero-text .main-hero-text {
+    font-size: 3rem;
+  }
+
+  .hero-text .sub-hero-text {
+    font-size: 1.2rem;
+  }
+
+  .hero-text .hero-location {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0.8rem;
+  }
+
+  .landing-page-hero {
+    height: 50rem;
+    /* border: solid red; */
+    margin-top: -12rem;
+    position: relative;
+  }
+
+  .hero-img-holder {
+    height: 40rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .hero-img {
+    opacity: 0.1;
+    height: 22rem;
+    right: 2rem;
+  }
+
+  .hero-text {
+    left: 5rem;
+    bottom: 13rem;
+  }
+
+  .hero-text .main-hero-text {
+    font-size: 2.5rem;
+  }
+
+  .hero-text .sub-hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-text .hero-location {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0.8rem;
+  }
+
+  .hero-text .hero-location img {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.5rem;
+  }
+
+  .hero-text .hero-location span {
+    font-size: 0.8rem;
+  }
+
+  .landing-page-hero {
+    height: 50rem;
+    /* border: solid red; */
+    margin-top: -12rem;
+    position: relative;
+  }
+
+  .hero-img-holder {
+    height: 40rem;
+  }
+}
+
+@media (max-width: 590px) {
+  .hero-img {
+    display: none;
+  }
+
+  .hero-img-holder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      100deg,
+      #07284f -3.46%,
+      #052b51 17.64%,
+      #052b51 32.26%,
+      #052c52 32.89%,
+      #004068 51.48%,
+      #004069 53.49%,
+      #00466f 80.94%,
+      #00517a 90.89%,
+      #016691 100.24%
+    );
+    pointer-events: none;
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: 690px) {
+  .hero-text {
+    left: 4rem;
+    bottom: 14rem;
+  }
+
+  .hero-text .main-hero-text {
+    font-size: 1.8rem;
+  }
+
+  .hero-text .sub-hero-text {
+    font-size: 0.7rem;
+  }
+
+  .hero-text .hero-location {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0.6rem;
+  }
+
+  .hero-text .hero-location span {
+    font-size: 0.6rem;
+  }
+
+  .landing-page-hero {
+    height: 45rem;
+    /* border: solid red; */
+    margin-top: -12rem;
+    position: relative;
+  }
+
+  .hero-img-holder {
+    height: 38rem;
+  }
 }

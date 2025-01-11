@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <Router>
-        {/* <NavBar /> */}
+        <NavBar />
         <div>
           <Routes>
             <Route path="/" element={<LandingPage />} />
