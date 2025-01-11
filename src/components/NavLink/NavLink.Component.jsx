@@ -3,13 +3,27 @@ import "./NavLink.Styles.css";
 import { Link } from "react-router-dom";
 import { toggleNavLInks } from "../../redux/navigation/navigation.slice";
 
-export const NavLink = ({ text, url, isOnSideBar, linkName }) => {
+export const NavLink = ({ text, url, isOnSideBar, linkName, sectionId }) => {
   const navLinkSatus = useSelector((state) => state.navigation.navigationLinks);
   const dispatch = useDispatch();
 
-  console.log("check", navLinkSatus[linkName]);
+  // const scrollToSection = (e, sectionId) => {};
 
-  const handleLinkToggle = () => {
+  const handleLinkToggle = (e) => {
+    if (sectionId) {
+      e.preventDefault();
+
+      const offset = window.innerWidth <= 620 ? 90 : 120;
+
+      const section = document.getElementById(sectionId);
+      if (section) {
+        window.scrollTo({
+          top: section.offsetTop - offset,
+          behavior: "smooth",
+        });
+      }
+    }
+
     dispatch(toggleNavLInks(linkName));
   };
 

@@ -19,8 +19,17 @@
 
 :root {
   --cta-color: #065c93;
+  --back-drop-color: #052b51;
+  --review-background: #f0eeee;
+  --review-text-color: #565656;
+  --review-text-header: #454545;
 }
 
-/* body {
-  background-color: black; 
-} */
+body {
+  /* background-color: black;  */
+  padding-bottom: 80rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}

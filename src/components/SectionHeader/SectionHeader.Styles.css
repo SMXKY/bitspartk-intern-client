@@ -1,0 +1,15 @@
+.section-header {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--cta-color);
+  cursor: default;
+}
+
+@media (max-width: 620px) {
+  .section-header {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--cta-color);
+    cursor: default;
+  }
+}

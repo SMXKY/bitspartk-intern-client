@@ -9,9 +9,10 @@ export const SideBar = () => {
     <div className={`sidebar ${SideBar ? "sidebar-off" : ""}`}>
       <NavLink
         text="Reviews"
-        url={"/reviews"}
-        isOnSideBar
+        url={"/#reviews-section"}
         linkName={"reviews"}
+        sectionId={"reviews-section"}
+        isOnSideBar
       />
       <br />
       <NavLink

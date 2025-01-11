@@ -6,6 +6,7 @@ import { NavLink } from "../NavLink/NavLink.Component";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSideBar } from "../../redux/navigation/navigation.slice";
+import { useEffect } from "react";
 
 export const NavBar = () => {
   const [navBtn, setNavBtn] = useState("");
@@ -22,14 +23,38 @@ export const NavBar = () => {
     }
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      if (scrollPosition > 450) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="nav-bar">
+    <div className={`nav-bar ${isScrolled ? "nav-bar-scrolled" : ""}`}>
       <Link to={"/"}>
         <img className="logo-img" src={Logo} alt="bitspark-logo" />
       </Link>
 
       <div className="nav-links">
-        <NavLink text="Reviews" url={"/reviews"} linkName={"reviews"} />
+        <NavLink
+          text="Reviews"
+          url={"/#reviews-section"}
+          linkName={"reviews"}
+          sectionId={"reviews-section"}
+        />
         <NavLink
           text="Become an Intern"
           url={"/"}

@@ -10,6 +10,12 @@
   z-index: 200;
   align-items: center;
   padding: 3.4rem 1.4rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.nav-bar-scrolled {
+  background-color: var(--back-drop-color);
 }
 
 .nav-bar .logo-img {
