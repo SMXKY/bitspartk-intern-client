@@ -25,10 +25,10 @@
   --review-text-header: #454545;
 }
 
-body {
-  /* background-color: black;  */
+/* body {
+  background-color: black;
   padding-bottom: 80rem;
-}
+} */
 
 html {
   scroll-behavior: smooth;

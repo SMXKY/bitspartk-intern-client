@@ -42,7 +42,7 @@ export const LandingPage = () => {
   return (
     <div style={{ maxWidth: "100vw", overflow: "hidden" }}>
       <LandingPageHero />
-      <br></br>
+
       <div className="landing-page-action-btns">
         <ActionButton name={"Apply"} url={"/apply"} />
         <Link to={"/login"} className="already-an-intern-login-link">

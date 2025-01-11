@@ -26,9 +26,11 @@ export const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    const scrollDistance = window.innerWidth <= 620 ? 100 : 300;
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY || window.pageYOffset;
-      if (scrollPosition > 450) {
+      if (scrollPosition > scrollDistance) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);

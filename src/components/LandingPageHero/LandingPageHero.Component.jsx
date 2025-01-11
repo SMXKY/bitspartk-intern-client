@@ -8,7 +8,6 @@ export const LandingPageHero = () => {
       <div className="hero-img-holder">
         <img src={HeroImg} className="hero-img" alt="hero-img" />
       </div>
-
       <div className="hero-text">
         <p className="main-hero-text">Creative Internship</p>
         <p className="sub-hero-text">

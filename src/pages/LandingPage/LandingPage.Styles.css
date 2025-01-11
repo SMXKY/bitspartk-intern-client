@@ -1,7 +1,7 @@
 .landing-page-action-btns {
   /* background-color: red; */
   padding-left: 10rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
 }
 
 .already-an-intern-login-link {
@@ -38,7 +38,7 @@
 }
 
 .review-section {
-  margin-top: 5rem;
+  margin-top: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
   overflow: hidden;
@@ -65,20 +65,14 @@
   padding-left: 4rem;
 }
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.landing-page-action-btns {
+  margin-top: 3rem;
 }
 
 @media (min-width: 1449px) {
   .landing-page-action-btns {
     /* background-color: red; */
     padding-left: 10rem;
-    margin-top: 5rem;
   }
 }
 
@@ -116,8 +110,8 @@
 
   .review-section {
     padding-right: 1rem;
-    overflow: hidden;
-    white-space: nowrap;
+    /* overflow: hidden;
+    white-space: nowrap; */
   }
 }
 
@@ -145,8 +139,8 @@
     margin-top: 2rem;
     padding-left: 1rem;
     padding-right: 5rem;
-    overflow: hidden;
-    white-space: nowrap;
+    /* overflow: hidden;
+    white-space: nowrap; */
   }
 
   .actual-reviews {
@@ -167,5 +161,14 @@
   .hold-reviews {
     width: 92vw;
     /* background-color: red; */
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

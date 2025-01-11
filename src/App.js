@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar.Component";
 import { LandingPage } from "./pages/LandingPage/LandingPage.Component";
 import { SideBar } from "./components/SideBar/SideBar.Component";
+import { Footer } from "./components/Footer/Footer.Componet";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
           </Routes>
         </div>
+        <Footer />
       </Router>
     </div>
   );
