@@ -4,7 +4,69 @@
   right: 0;
   top: 0;
   height: 4rem;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   justify-content: space-between;
+  z-index: 200;
+  align-items: center;
+  padding: 3.4rem 1.4rem;
+}
+
+.nav-bar .logo-img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  /* border: solid red; */
+  width: 30rem;
+}
+
+.side-bar-btn {
+  display: none;
+}
+
+@media (max-width: 786px) {
+  .nav-links {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 514px) {
+  .nav-links {
+    display: none;
+  }
+
+  .side-bar-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: solid red; */
+    cursor: pointer;
+    height: 1.3rem;
+    align-items: center;
+  }
+
+  .side-bar-btn div {
+    height: 0.15rem;
+    border-radius: 0.1rem;
+    width: 1.8rem;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .sid-bar-btn-close div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .sid-bar-btn-close div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .sid-bar-btn-close div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
 }

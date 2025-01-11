@@ -16,3 +16,11 @@
   box-sizing: border-box;
   font-family: "Poppins", serif;
 }
+
+:root {
+  --cta-color: #065c93;
+}
+
+body {
+  /* background-color: black; */
+}
