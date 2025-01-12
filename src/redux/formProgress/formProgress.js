@@ -22,12 +22,14 @@ const formProgressSlice = createSlice({
       if (action.payload.part === 1 && action.payload.method === "activate") {
         state.complete.partOne = true;
         state.isOn.partTwo = true;
+        state.progress = 12;
       } else if (
         action.payload.part === 1 &&
         action.payload.method === "de-activate"
       ) {
         state.complete.partOne = false;
         state.isOn.partTwo = false;
+        state.progress = 11;
       } else if (
         action.payload.part === 2 &&
         action.payload.method === "activate"
@@ -54,6 +56,7 @@ const formProgressSlice = createSlice({
     },
 
     incrementProgress: (state, action) => {
+      console.log("Hi there");
       state.progress += 1;
     },
 

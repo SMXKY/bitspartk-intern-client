@@ -20,9 +20,10 @@
   right: 2rem;
   /* background-color: var(--back-drop-color); */
   background: linear-gradient(90deg, #052b51 0%, #f8f8f8 1%);
+  width: 0%;
   position: absolute;
   z-index: 5;
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 1s;
 }
 
 .form-progress-bar {
@@ -225,61 +226,76 @@
 /*progress bar evolutions*/
 
 .progress-bar-evolution-part-1 {
-  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 4.16625%);
+  width: 4.16625%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-2 {
-  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 8.3325%);
+  width: 8.3325%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-3 {
-  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 12.49875%);
+  width: 12.49875%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-4 {
-  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 16.665%);
+  width: 16.665%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-5 {
-  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 20.83125%);
+  width: 20.83125%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-6 {
-  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 24.9975%);
+  width: 24.9975%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-7 {
-  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 29.16375%);
+  width: 29.16375%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-8 {
-  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 50%);
+  width: 33.33%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-9 {
-  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 55%);
+  width: 37.5%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-10 {
-  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 60%);
+  width: 41.66%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-11 {
-  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 65%);
+  width: 45.83%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-12 {
-  background: linear-gradient(90deg, #052b51 65%, #f8f8f8 70%);
+  width: 50%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-13 {
-  background: linear-gradient(90deg, #052b51 65%, #f8f8f8 80%);
+  width: 66.66%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-14 {
-  background: linear-gradient(90deg, #052b51 65%, #f8f8f8 90%);
+  width: 75%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }
 
 .progress-bar-evolution-part-15 {
-  background: linear-gradient(90deg, #052b51 95%, #f8f8f8 100%);
+  width: 95%;
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 100%);
 }

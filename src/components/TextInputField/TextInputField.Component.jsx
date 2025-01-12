@@ -9,15 +9,36 @@ export const TextInputField = ({
   isNumberInput,
   min,
   max,
+  value,
+  handleUpdate,
+  formProp,
 }) => {
   return (
     <div className="text-input-field">
       {isEmailInput ? (
-        <input type="email" placeholder={placeHolder} min={min} max={max} />
+        <input
+          type="email"
+          placeholder={placeHolder}
+          onChange={(e) => handleUpdate(formProp, e.target.value)}
+          required={isRequired}
+        />
       ) : isNumberInput ? (
-        <input type="number" placeholder={placeHolder} />
+        <input
+          type="number"
+          placeholder={placeHolder}
+          onChange={(e) => handleUpdate(formProp, e.target.value)}
+          required={isRequired}
+          min={min}
+          max={max}
+        />
       ) : (
-        <input type="text" placeholder={placeHolder} />
+        <input
+          type="text"
+          placeholder={placeHolder}
+          value={value}
+          onChange={(e) => handleUpdate(formProp, e.target.value)}
+          required={isRequired}
+        />
       )}
 
       <span className="input-name">
