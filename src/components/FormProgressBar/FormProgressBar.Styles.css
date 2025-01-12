@@ -110,25 +110,29 @@
 }
 
 @media (max-width: 1218px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 60rem;
   }
 }
 
 @media (max-width: 984px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 50rem;
   }
 }
 
 @media (max-width: 824px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 40rem;
   }
 }
 
 @media (max-width: 788px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 40rem;
   }
 
@@ -159,13 +163,15 @@
 }
 
 @media (max-width: 670px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 30rem;
   }
 }
 
 @media (max-width: 502px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 25rem;
   }
 
@@ -196,19 +202,22 @@
 }
 
 @media (max-width: 418px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 22rem;
   }
 }
 
 @media (max-width: 376px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 20rem;
   }
 }
 
 @media (max-width: 340px) {
-  .form-progress-bar {
+  .form-progress-bar,
+  .form-inputs-and-btns {
     width: 19rem;
   }
 }
