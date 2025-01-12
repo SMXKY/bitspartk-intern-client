@@ -1,0 +1,276 @@
+.section-indicator {
+  height: 3.8rem;
+  width: 3.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 6px white;
+  transition: border ease-in-out 0.25s;
+  position: relative;
+  z-index: 30;
+  background-color: white;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+}
+
+.progress-bar {
+  height: 1.3rem;
+  left: 2rem;
+  right: 2rem;
+  /* background-color: var(--back-drop-color); */
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 1%);
+  position: absolute;
+  z-index: 5;
+  transition: ease-in-out 0.5s;
+}
+
+.form-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75rem;
+  position: relative;
+}
+
+.all-sections {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-indicator img {
+  opacity: 0;
+  transition: opacity ease-in-out 0.5s;
+}
+
+.section-indecator-complete {
+  border: solid 6px var(--progress-bar-color);
+  box-shadow: 0px 0px 70px rgba(5, 43, 81, 1);
+}
+
+.section-indecator-complete img {
+  opacity: 1;
+}
+
+.section-indicator p {
+  position: absolute;
+  color: var(--back-drop-color);
+  bottom: -2.5rem;
+  font-weight: 200;
+}
+
+.section-indicator-on p {
+  font-weight: 400;
+}
+
+.section-text-on {
+  font-weight: 400;
+}
+
+.section {
+  z-index: 20;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  /* opacity: 0.2; */
+  width: 4.8rem;
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.15;
+  border-radius: 50%;
+  /* background-color: red; */
+}
+
+.all-sections {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-indicator img {
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+.form-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: blue; */
+  width: 75rem;
+  position: relative;
+}
+
+@media (max-width: 1218px) {
+  .form-progress-bar {
+    width: 60rem;
+  }
+}
+
+@media (max-width: 984px) {
+  .form-progress-bar {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 824px) {
+  .form-progress-bar {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 788px) {
+  .form-progress-bar {
+    width: 40rem;
+  }
+
+  .section-indicator {
+    height: 3rem;
+    width: 3rem;
+    border-width: 4px;
+  }
+
+  .section-indicator img {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  .section {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .progress-bar {
+    height: 1rem;
+  }
+
+  .section-indicator p {
+    font-size: 0.8rem;
+    bottom: -2rem;
+  }
+}
+
+@media (max-width: 670px) {
+  .form-progress-bar {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 502px) {
+  .form-progress-bar {
+    width: 25rem;
+  }
+
+  .section-indicator {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-width: 3px;
+  }
+
+  .section-indicator img {
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+
+  .section {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .progress-bar {
+    height: 0.8rem;
+  }
+
+  .section-indicator p {
+    font-size: 0.7rem;
+    bottom: -1.5rem;
+  }
+}
+
+@media (max-width: 418px) {
+  .form-progress-bar {
+    width: 22rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .form-progress-bar {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .form-progress-bar {
+    width: 19rem;
+  }
+}
+
+/*progress bar evolutions*/
+
+.progress-bar-evolution-part-1 {
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 4.16625%);
+}
+
+.progress-bar-evolution-part-2 {
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 8.3325%);
+}
+
+.progress-bar-evolution-part-3 {
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 12.49875%);
+}
+
+.progress-bar-evolution-part-4 {
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 16.665%);
+}
+
+.progress-bar-evolution-part-5 {
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 20.83125%);
+}
+
+.progress-bar-evolution-part-6 {
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 24.9975%);
+}
+
+.progress-bar-evolution-part-7 {
+  background: linear-gradient(90deg, #052b51 0%, #f8f8f8 29.16375%);
+}
+
+.progress-bar-evolution-part-8 {
+  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 50%);
+}
+
+.progress-bar-evolution-part-9 {
+  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 55%);
+}
+
+.progress-bar-evolution-part-10 {
+  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 60%);
+}
+
+.progress-bar-evolution-part-11 {
+  background: linear-gradient(90deg, #052b51 44%, #f8f8f8 65%);
+}
+
+.progress-bar-evolution-part-12 {
+  background: linear-gradient(90deg, #052b51 65%, #f8f8f8 70%);
+}
+
+.progress-bar-evolution-part-13 {
+  background: linear-gradient(90deg, #052b51 65%, #f8f8f8 80%);
+}
+
+.progress-bar-evolution-part-14 {
+  background: linear-gradient(90deg, #052b51 65%, #f8f8f8 90%);
+}
+
+.progress-bar-evolution-part-15 {
+  background: linear-gradient(90deg, #052b51 95%, #f8f8f8 100%);
+}

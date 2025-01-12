@@ -19,10 +19,11 @@
 
 :root {
   --cta-color: #065c93;
-  --back-drop-color: #052b51;
+  --back-drop-color: rgb(5, 43, 81);
   --review-background: #f0eeee;
   --review-text-color: #565656;
   --review-text-header: #454545;
+  --progress-bar-color: #002e54;
 }
 
 /* body {
