@@ -5,6 +5,7 @@ import { NavBar } from "./components/NavBar/NavBar.Component";
 import { LandingPage } from "./pages/LandingPage/LandingPage.Component";
 import { SideBar } from "./components/SideBar/SideBar.Component";
 import { Footer } from "./components/Footer/Footer.Componet";
+import { ApplicationForm } from "./pages/ApplicationForm/ApplicationForm.Component";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/apply" element={<ApplicationForm />} />
           </Routes>
         </div>
         <Footer />

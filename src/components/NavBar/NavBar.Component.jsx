@@ -62,7 +62,7 @@ export const NavBar = () => {
           url={"/"}
           linkName={"becomeAnIntern"}
         />
-        <NavLink text="Login" url={"/login"} linkName={"login"} />
+        <NavLink text="Login" url={"#login"} linkName={"login"} />
       </div>
 
       <div className={`side-bar-btn ${navBtn}`} onClick={handleNavBtnSwitch}>

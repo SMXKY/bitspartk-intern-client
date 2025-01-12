@@ -22,7 +22,7 @@ export const SideBar = () => {
         linkName={"becomeAnIntern"}
       />
       <br />
-      <NavLink text="Login" url={"/login"} isOnSideBar linkName={"login"} />
+      <NavLink text="Login" url={"#login"} isOnSideBar linkName={"login"} />
     </div>
   );
 };

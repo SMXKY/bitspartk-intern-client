@@ -1,0 +1,74 @@
+.application-hero {
+  overflow: hidden;
+}
+
+.application-hero .landing-page-hero {
+  margin-top: -32rem;
+  /* background-color: red; */
+}
+
+.application-hero .hero-img-holder {
+  margin-left: -1rem;
+}
+
+.progress-text {
+  color: white;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+.application-hero .hero-text {
+  left: 10rem;
+  bottom: 7.8rem;
+}
+
+@media (max-width: 1377px) {
+  .progress-text {
+    font-size: 2rem;
+  }
+
+  .application-hero .hero-text {
+    left: 4rem;
+    bottom: 10rem;
+  }
+}
+
+@media (max-width: 787px) {
+  .progress-text {
+    font-size: 1.5rem;
+  }
+
+  .application-hero .hero-text {
+    left: 4rem;
+    bottom: 12rem;
+  }
+}
+
+@media (max-width: 751px) {
+  .application-hero .landing-page-hero {
+    margin-top: -25rem;
+  }
+
+  .application-hero .hero-img-holder {
+    margin-left: -1.5rem;
+  }
+  .progress-text {
+    font-size: 1.3rem;
+  }
+
+  .application-hero .hero-text {
+    left: 4rem;
+    bottom: 6rem;
+  }
+}
+
+@media (max-width: 495px) {
+  .application-hero .hero-text {
+    left: 2rem;
+    bottom: 5rem;
+  }
+
+  .progress-text {
+    font-size: 1.2rem;
+  }
+}
