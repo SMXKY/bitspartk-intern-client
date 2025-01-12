@@ -5,8 +5,13 @@ import { Link } from "react-router-dom";
 import { SectionHeader } from "../../components/SectionHeader/SectionHeader.Component";
 import { Review } from "../../components/Review/Review.Component";
 import userImage from "../../assets/arya.jpg";
+import { useDispatch } from "react-redux";
+import { resetProgees } from "../../redux/formProgress/formProgress";
 
 export const LandingPage = () => {
+  const dispatch = useDispatch();
+  dispatch(resetProgees());
+
   const reviews = [
     {
       content:

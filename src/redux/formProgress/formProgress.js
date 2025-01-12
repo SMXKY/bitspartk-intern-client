@@ -19,29 +19,32 @@ const formProgressSlice = createSlice({
   initialState,
   reducers: {
     updatePart: (state, action) => {
+      console.log("active");
       if (action.payload.part === 1 && action.payload.method === "activate") {
         state.complete.partOne = true;
         state.isOn.partTwo = true;
-        state.progress = 12;
+        state.progress = 8;
       } else if (
         action.payload.part === 1 &&
         action.payload.method === "de-activate"
       ) {
         state.complete.partOne = false;
         state.isOn.partTwo = false;
-        state.progress = 11;
+        state.progress = 8;
       } else if (
         action.payload.part === 2 &&
         action.payload.method === "activate"
       ) {
         state.complete.partTwo = true;
         state.isOn.partThree = true;
+        state.progress = 12;
       } else if (
         action.payload.part === 2 &&
         action.payload.method === "de-activate"
       ) {
         state.complete.partTwo = false;
         state.isOn.partThree = false;
+        state.progress = 12;
       } else if (
         action.payload.part === 3 &&
         action.payload.method === "activate"
@@ -56,17 +59,28 @@ const formProgressSlice = createSlice({
     },
 
     incrementProgress: (state, action) => {
-      console.log("Hi there");
+      // console.log("incrmented");
       state.progress += 1;
     },
 
     decrementProgress: (state, action) => {
       state.progress -= 1;
     },
+
+    resetProgees: (state, action) => {
+      state.progress = 0;
+      state.complete.partOne = false;
+      state.complete.partTwo = false;
+      state.complete.partThree = false;
+    },
   },
 });
 
-export const { updatePart, incrementProgress, decrementProgress } =
-  formProgressSlice.actions;
+export const {
+  updatePart,
+  incrementProgress,
+  decrementProgress,
+  resetProgees,
+} = formProgressSlice.actions;
 
 export default formProgressSlice.reducer;

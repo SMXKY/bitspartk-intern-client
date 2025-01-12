@@ -46,11 +46,11 @@
 
 @media (max-width: 751px) {
   .application-hero .landing-page-hero {
-    margin-top: -25rem;
+    margin-top: -26rem;
   }
 
   .application-hero .hero-img-holder {
-    margin-left: -1.5rem;
+    margin-left: -1rem;
   }
   .progress-text {
     font-size: 1.3rem;
