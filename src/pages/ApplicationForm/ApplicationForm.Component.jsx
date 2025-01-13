@@ -14,6 +14,7 @@ import {
 
 import { DropDownInput } from "../../components/DropDownInput/DropDownInput.Component";
 import { FileInput } from "../../components/FileInput/FileInput.Component";
+import { Loading } from "../../components/Loading/Loading.Component";
 
 export const ApplicationForm = () => {
   const formProgress = useSelector((state) => state.formProgress);
@@ -311,6 +312,8 @@ export const ApplicationForm = () => {
     });
   };
 
+  const [loading, setLoading] = useState(false);
+
   const handleSubit = async (e) => {
     e.preventDefault();
     const errors = [];
@@ -370,18 +373,18 @@ export const ApplicationForm = () => {
       //   console.log(dataObject);
 
       try {
-        const response = await fetch(
-          "http://127.0.0.1:8000/api/v1/applications",
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
+        setLoading(true);
+
+        const response = await fetch("/api/v1/applications", {
+          method: "POST",
+          body: formData,
+        });
 
         if (response.ok) {
           const data = await response.json();
           console.log("Form submitted successfully:", data);
           alert("Application Successfully submited");
+          setLoading(false);
           window.location = "/";
         } else {
           const data = await response.json();
@@ -394,10 +397,18 @@ export const ApplicationForm = () => {
           } else {
             alert(data.message);
           }
+
+          setLoading(false);
         }
       } catch (error) {
         console.error("Error during form submission:", error);
       }
+
+      // setLoading(true);
+      // // Simulate a network request
+      // setTimeout(() => {
+      //   setLoading(false);
+      // }, 5000);
     }
   };
 
@@ -410,6 +421,7 @@ export const ApplicationForm = () => {
   return (
     <div className="application-form">
       <ApplicationHero />
+      <Loading isLoading={loading} />
       <form
         action=""
         className="application-form-holder"
