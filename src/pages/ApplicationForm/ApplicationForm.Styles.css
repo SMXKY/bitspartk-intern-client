@@ -204,6 +204,10 @@ input[type="radio"]:checked + .radion-label:before {
     grid-template-columns: 5rem 3fr;
     margin-top: 0.3rem;
   }
+
+  .form-slides {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 510px) {

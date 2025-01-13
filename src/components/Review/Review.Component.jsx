@@ -5,7 +5,7 @@ export const Review = ({ content, img, name }) => {
   return (
     <div className="review-component">
       <div className="review-content">
-        {content}
+        <p className="review-content-p">{content}</p>
         <div className="review-information">
           <img src={img ? img : defaultImg} alt="review-img" />
           <div className="user-name">{name}</div>

@@ -299,3 +299,17 @@
   width: 94%;
   background: linear-gradient(90deg, #052b51 100%, #f8f8f8 100%);
 }
+
+@media (max-width: 671px) {
+  .progress-bar-evolution-part-15 {
+    width: 90%;
+    background: linear-gradient(90deg, #052b51 100%, #f8f8f8 100%);
+  }
+}
+
+@media (max-width: 395px) {
+  .progress-bar-evolution-part-15 {
+    width: 85%;
+    background: linear-gradient(90deg, #052b51 100%, #f8f8f8 100%);
+  }
+}

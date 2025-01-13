@@ -70,6 +70,10 @@
     margin-right: 1rem;
   }
 
+  .review-content-p {
+    max-width: 100%;
+  }
+
   .review-information {
     position: absolute;
     width: fit-content;
