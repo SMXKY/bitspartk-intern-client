@@ -7,6 +7,7 @@ export const DropDownInput = ({
   value,
   handleUpdate,
   formProp,
+  isMonthsInput,
 }) => {
   return (
     <div className="text-input-field">
@@ -19,7 +20,7 @@ export const DropDownInput = ({
       >
         {values.map((val) => (
           <option value={val} className="drop-down-input-option">
-            {val}
+            {val} {isMonthsInput ? `Month${Number(val) > 1 ? "s" : ""}` : ""}
           </option>
         ))}
       </select>

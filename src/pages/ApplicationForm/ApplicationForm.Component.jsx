@@ -691,15 +691,15 @@ export const ApplicationForm = () => {
               </div>
 
               <div className="form-input-section">
-                <div className="actual-inputs actual-inputs-names">
-                  <TextInputField
-                    name={"Duration"}
+                <div className="actual-inputs actual-inputs-names actual-inputs-school">
+                  <DropDownInput
+                    name={"Intership Duration"}
                     isRequired
-                    placeHolder={"How many months is your internship?."}
+                    values={[1, 2, 3, 6]}
                     value={formInformation.durationInMonths}
                     handleUpdate={handleFormInformation}
                     formProp={"durationInMonths"}
-                    isNumberInput
+                    isMonthsInput
                   />
                 </div>
               </div>
