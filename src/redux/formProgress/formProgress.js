@@ -50,7 +50,7 @@ const formProgressSlice = createSlice({
         action.payload.method === "activate"
       ) {
         state.complete.partThree = true;
-        state.progress = 15;
+        state.progress = 16;
       } else if (
         action.payload.part === 3 &&
         action.payload.method === "de-activate"

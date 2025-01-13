@@ -52,6 +52,7 @@ export const FormProgressBar = () => {
       <div
         className={`progress-bar ${`progress-bar-evolution-part-${formProgress.progress}`}`}
       ></div>
+      <div className={`progress-bar progress-bar-background`}></div>
     </div>
   );
 };

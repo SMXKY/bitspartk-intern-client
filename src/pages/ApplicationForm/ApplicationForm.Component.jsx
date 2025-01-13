@@ -40,7 +40,10 @@ export const ApplicationForm = () => {
     month: 0,
     day: 0,
     previousErro: "",
-    fileName: "",
+    fileName1: "",
+    fileName2: "",
+    supportDocument: "",
+    evaluationForm: "",
   });
 
   const studyStacks = [
@@ -89,7 +92,22 @@ export const ApplicationForm = () => {
 
     setFormInformation((prevInfo) => ({
       ...prevInfo,
-      document: value,
+      evaluationForm: value,
+    }));
+
+    console.log(formInformation);
+  };
+
+  const handleFileButton2 = (value) => {
+    if (!formInformation.document) {
+      dispatch(incrementProgress());
+    }
+
+    console.log("value: ", value);
+
+    setFormInformation((prevInfo) => ({
+      ...prevInfo,
+      supportDocument: value,
     }));
 
     console.log(formInformation);
@@ -293,7 +311,7 @@ export const ApplicationForm = () => {
   };
 
   const handleCompletion = (progress) => {
-    if (progress === 15) {
+    if (progress === 16) {
       dispatch(updatePart({ part: 3, method: "activate" }));
     }
   };
@@ -332,8 +350,8 @@ export const ApplicationForm = () => {
       );
     }
 
-    if (!formInformation.document) {
-      errors.push("Support document PDF is required");
+    if (!formInformation.evaluationForm) {
+      errors.push("Support evaluation form PDF is required");
     } else {
       const formData = new FormData(formRef.current);
 
@@ -343,14 +361,39 @@ export const ApplicationForm = () => {
         dataObject[key] = value;
       });
 
-      // Check if the formInformation.document is a PDF
-      if (dataObject.document.type !== "application/pdf") {
-        errors.push("The document must be a PDF");
+      // Check if the formInformation.evaluationForm is a PDF
+      if (dataObject.evaluationForm.type !== "application/pdf") {
+        errors.push("The evaluation form must be a PDF");
       }
 
-      // Check if the dataObject.document size is below 2MB
+      // Check if the dataObject.evaluationForm size is below 2MB
       const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
-      if (dataObject.document.size > MAX_SIZE) {
+      if (dataObject.evaluationForm.size > MAX_SIZE) {
+        errors.push("The file size must be below 2MB");
+      }
+    }
+
+    console.log(formInformation);
+
+    if (!formInformation.supportDocument) {
+      errors.push("Support support letter PDF is required");
+    } else {
+      const formData = new FormData(formRef.current);
+
+      // Logging form data
+      const dataObject = {};
+      formData.forEach((value, key) => {
+        dataObject[key] = value;
+      });
+
+      // Check if the formInformation.supportDocument is a PDF
+      if (dataObject.supportDocument.type !== "application/pdf") {
+        errors.push("The support leter must be a PDF");
+      }
+
+      // Check if the dataObject.supportDocument size is below 2MB
+      const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
+      if (dataObject.supportDocument.size > MAX_SIZE) {
         errors.push("The file size must be below 2MB");
       }
     }
@@ -365,12 +408,12 @@ export const ApplicationForm = () => {
       const formData = new FormData(formRef.current);
 
       // Logging form data
-      //   const dataObject = {};
-      //   formData.forEach((value, key) => {
-      //     dataObject[key] = value;
-      //   });
+      const dataObject = {};
+      formData.forEach((value, key) => {
+        dataObject[key] = value;
+      });
 
-      //   console.log(dataObject);
+      console.log(dataObject);
 
       try {
         setLoading(true);
@@ -616,7 +659,10 @@ export const ApplicationForm = () => {
               </div>
 
               <div className="form-input-next-back-btns">
-                <button className="continure-btn" onClick={handleFistBackBtn}>
+                <button
+                  className="continure-btn back-btn"
+                  onClick={handleFistBackBtn}
+                >
                   Back
                 </button>
 
@@ -661,21 +707,38 @@ export const ApplicationForm = () => {
               <div className="form-input-section">
                 <div className="actual-inputs actual-inputs-names actual-inputs-school">
                   <FileInput
-                    name={"Supporting documents *"}
+                    name={"Evaluation Form *"}
                     limit={2}
-                    placeHolder={
-                      "Upload your support letter and Evaluation form"
-                    }
-                    value={formInformation.document}
-                    fileName={formInformation.fileName}
+                    placeHolder={"Upload your evaluation form."}
+                    value={formInformation.evaluationForm}
+                    fileName={formInformation.fileName1}
                     handleUpdate={handleFileButton}
-                    formProp={"document"}
+                    formProp={"evaluationForm"}
+                    inputName={"evaluationForm"}
+                  />
+                </div>
+
+                <br />
+
+                <div className="actual-inputs actual-inputs-names actual-inputs-school btn-support">
+                  <FileInput
+                    name={"Support Letter *"}
+                    limit={2}
+                    placeHolder={"Upload your support letter."}
+                    value={formInformation.supportDocument}
+                    fileName={formInformation.fileName2}
+                    handleUpdate={handleFileButton2}
+                    formProp={"supportDocument"}
+                    inputName={"supportDocument"}
                   />
                 </div>
               </div>
 
               <div className="form-input-next-back-btns last-btns">
-                <button className="continure-btn" onClick={handleSecondBackBtn}>
+                <button
+                  className="continure-btn back-btn"
+                  onClick={handleSecondBackBtn}
+                >
                   Back
                 </button>
 

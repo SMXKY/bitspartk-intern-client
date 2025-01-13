@@ -10,19 +10,21 @@ export const FileInput = ({
   value,
   handleUpdate,
   formProp,
+  inputName,
   //   fileName,
 }) => {
   const [fileName, setFileName] = useState("");
 
   return (
     <div className="text-input-field">
-      <label className="text-input-icon-and-place-holder" htmlFor="uploadBtn">
+      <label className="text-input-icon-and-place-holder" htmlFor={inputName}>
         <img alt="file-icon" src={FileIcon} />
         <p>{placeHolder}</p>
       </label>
       <input
         type="file"
-        id="uploadBtn"
+        id={inputName}
+        className="filieInput-btn-btn"
         name={formProp}
         onChange={(e) => {
           const newFile = new File(

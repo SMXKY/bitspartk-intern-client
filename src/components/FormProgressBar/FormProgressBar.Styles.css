@@ -296,14 +296,31 @@
 }
 
 .progress-bar-evolution-part-15 {
+  width: 85%;
+  background: linear-gradient(90deg, #052b51 100%, #f8f8f8 100%);
+}
+
+.progress-bar-evolution-part-16 {
   width: 94%;
   background: linear-gradient(90deg, #052b51 100%, #f8f8f8 100%);
 }
 
+.progress-bar-background {
+  background: #e7e7e773;
+  width: 94%;
+  z-index: 4;
+}
+
 @media (max-width: 671px) {
-  .progress-bar-evolution-part-15 {
+  .progress-bar-evolution-part-16 {
     width: 90%;
     background: linear-gradient(90deg, #052b51 100%, #f8f8f8 100%);
+  }
+
+  .progress-bar-background {
+    background: #e7e7e773;
+    width: 90%;
+    z-index: 4;
   }
 
   .section-indicator {
@@ -312,8 +329,14 @@
 }
 
 @media (max-width: 395px) {
-  .progress-bar-evolution-part-15 {
+  .progress-bar-evolution-part-16 {
     width: 85%;
     background: linear-gradient(90deg, #052b51 100%, #f8f8f8 100%);
+  }
+
+  .progress-bar-background {
+    background: #e7e7e773;
+    width: 85%;
+    z-index: 4;
   }
 }

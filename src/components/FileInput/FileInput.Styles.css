@@ -25,6 +25,10 @@
   bottom: -2rem;
 }
 
+.filieInput-btn-btn {
+  display: none;
+}
+
 @media (max-width: 672px) {
   .text-input-icon-and-place-holder img {
     height: 1.6rem;
