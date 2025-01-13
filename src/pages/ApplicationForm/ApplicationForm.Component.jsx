@@ -742,7 +742,10 @@ export const ApplicationForm = () => {
                   Back
                 </button>
 
-                <button className="continure-btn" onClick={handleSubit}>
+                <button
+                  className="continure-btn submit-btn"
+                  onClick={handleSubit}
+                >
                   Submit
                 </button>
               </div>
