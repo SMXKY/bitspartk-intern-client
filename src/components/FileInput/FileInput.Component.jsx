@@ -16,7 +16,7 @@ export const FileInput = ({
   const [fileName, setFileName] = useState("");
 
   return (
-    <div className="text-input-field">
+    <label className="text-input-field" style={{ cursor: "pointer" }}>
       <label className="text-input-icon-and-place-holder" htmlFor={inputName}>
         <img alt="file-icon" src={FileIcon} />
         <p>{placeHolder}</p>
@@ -48,6 +48,6 @@ export const FileInput = ({
       <span className="error-message file-limit-indicator">
         {fileName ? `Uploaded: ${fileName}` : ` Max size should be ${limit}MB`}
       </span>
-    </div>
+    </label>
   );
 };
