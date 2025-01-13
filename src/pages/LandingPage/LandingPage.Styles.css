@@ -69,6 +69,15 @@
   margin-top: 3rem;
 }
 
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @media (min-width: 1449px) {
   .landing-page-action-btns {
     /* background-color: red; */
@@ -148,7 +157,7 @@
   }
 
   .actual-reviews {
-    animation-duration: 30s;
+    animation-duration: 40s;
   }
 
   .hold-reviews {
@@ -162,13 +171,13 @@
     width: 92vw;
     /* background-color: red; */
   }
-}
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
   }
 }

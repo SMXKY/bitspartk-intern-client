@@ -1,0 +1,40 @@
+.drop-down-input-select {
+  width: 100%;
+  color: var(--back-drop-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+}
+
+.drop-down-input-select :focus {
+  outline: none;
+}
+
+.drop-down-input-select :active {
+  outline: none;
+}
+
+.drop-down-input-option {
+  padding: 0rem 2rem;
+  cursor: pointer;
+}
+
+.drop-down-input-option:hover {
+  background-color: var(--back-drop-color);
+  color: white;
+}
+
+@media (max-width: 672px) {
+  .drop-down-input-select {
+    width: 100%;
+    color: var(--back-drop-color);
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+}

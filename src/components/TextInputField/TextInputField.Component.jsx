@@ -21,6 +21,7 @@ export const TextInputField = ({
           placeholder={placeHolder}
           onChange={(e) => handleUpdate(formProp, e.target.value)}
           required={isRequired}
+          name={formProp}
         />
       ) : isNumberInput ? (
         <input
@@ -30,6 +31,7 @@ export const TextInputField = ({
           required={isRequired}
           min={min}
           max={max}
+          name={formProp}
         />
       ) : (
         <input
@@ -38,6 +40,7 @@ export const TextInputField = ({
           value={value}
           onChange={(e) => handleUpdate(formProp, e.target.value)}
           required={isRequired}
+          name={formProp}
         />
       )}
 

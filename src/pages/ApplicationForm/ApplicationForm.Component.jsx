@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer, useRef, useState } from "react";
 import { ApplicationHero } from "../../components/ApplicationHero/ApplicationHero.Component";
 import { FormProgressBar } from "../../components/FormProgressBar/FormProgressBar.Component";
 import { TextInputField } from "../../components/TextInputField/TextInputField.Component";
@@ -11,11 +11,15 @@ import {
   decrementProgress,
   updatePart,
 } from "../../redux/formProgress/formProgress";
-import { IoInformation } from "react-icons/io5";
+
+import { DropDownInput } from "../../components/DropDownInput/DropDownInput.Component";
+import { FileInput } from "../../components/FileInput/FileInput.Component";
 
 export const ApplicationForm = () => {
-  //   const formProgress = useSelector((state) => state.formProgress);
+  const formProgress = useSelector((state) => state.formProgress);
   const dispatch = useDispatch();
+
+  const formRef = useRef(null);
 
   const [formInformation, setFormInformation] = useState({
     firstName: "",
@@ -30,14 +34,24 @@ export const ApplicationForm = () => {
     internshipTopic: "",
     studyStack: "",
     durationInMonths: 0,
-    cv: "",
-    supportDocument: "",
-    writtenApplication: "",
+    document: null,
     year: 0,
     month: 0,
     day: 0,
     previousErro: "",
+    fileName: "",
   });
+
+  const studyStacks = [
+    "Backend Web Development",
+    "Frontend Web Development",
+    "Mobile Development",
+    "Cyber Security",
+    "Desktop Development",
+    "Data Science and Maching Learning",
+    "Database Administration",
+    "Networking",
+  ];
 
   const handleFormInformation = (formProp, value) => {
     if (!formInformation[formProp]) {
@@ -50,6 +64,8 @@ export const ApplicationForm = () => {
       ...prevInfo,
       [formProp]: value,
     }));
+
+    // console.log(formInformation);
   };
 
   const handleRadioButton = (value) => {
@@ -63,20 +79,36 @@ export const ApplicationForm = () => {
     }));
   };
 
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const handleFileButton = (value) => {
+    if (!formInformation.document) {
+      dispatch(incrementProgress());
+    }
+
+    console.log("value: ", value);
+
+    setFormInformation((prevInfo) => ({
+      ...prevInfo,
+      document: value,
+    }));
+
+    console.log(formInformation);
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
-    { id: 1, content: "Slide 1" },
-    { id: 2, content: "Slide 2" },
-    { id: 3, content: "Slide 3" },
+    { id: 0, content: "Slide 1" },
+    { id: 1, content: "Slide 2" },
+    { id: 2, content: "Slide 3" },
   ];
 
-  const showSlide = (index) => {
-    setCurrentIndex(index);
-  };
+  //   const showSlide = (index) => {
+  //     setCurrentIndex(index);
+  //   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    console.log(slides[currentIndex].id, currentIndex);
   };
 
   const handlePrev = () => {
@@ -240,20 +272,16 @@ export const ApplicationForm = () => {
       //   console.log(formInformation);
       //   console.log("Form submitted with information:", formInformation);
       dispatch(updatePart({ part: 2, method: "activate" }));
-      //   if (formInformation.school) {
-      //     console.log("hi");
-      //     dispatch(incrementProgress());
-      //   }
+      if (formInformation.studyStack) {
+        dispatch(incrementProgress());
+      }
 
-      //   if (formInformation.department) {
-      //     dispatch(incrementProgress());
-      //   }
-      //   if (formInformation.level) {
-      //     dispatch(incrementProgress());
-      //   }
-      //   if (formInformation.internshipTopic) {
-      //     dispatch(incrementProgress());
-      //   }
+      if (formInformation.durationInMonths) {
+        dispatch(incrementProgress());
+      }
+      if (formInformation.document) {
+        dispatch(incrementProgress());
+      }
 
       handleNext();
       window.scrollTo({
@@ -263,17 +291,110 @@ export const ApplicationForm = () => {
     }
   };
 
+  const handleCompletion = (progress) => {
+    if (progress === 15) {
+      dispatch(updatePart({ part: 3, method: "activate" }));
+    }
+  };
+
+  handleCompletion(formProgress.progress);
+
+  const handleSecondBackBtn = (e) => {
+    e.preventDefault();
+    dispatch(updatePart({ part: 2, method: "de-activate" }));
+    dispatch(updatePart({ part: 3, method: "de-activate" }));
+    // setCurrentIndex(1);
+    handlePrev();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleSubit = (e) => {
+    e.preventDefault();
+    const errors = [];
+
+    if (!formInformation.studyStack) {
+      errors.push("Valid study stack required");
+    }
+
+    if (
+      !formInformation.durationInMonths ||
+      Number(formInformation.durationInMonths) < 1 ||
+      Number(formInformation.durationInMonths) > 12
+    ) {
+      errors.push(
+        "Intership duration cannot be less that 1 or greater than 12"
+      );
+    }
+
+    if (!formInformation.document) {
+      errors.push("Support document PDF is required");
+    } else {
+      const formData = new FormData(formRef.current);
+
+      // Logging form data
+      const dataObject = {};
+      formData.forEach((value, key) => {
+        dataObject[key] = value;
+      });
+
+      // Check if the formInformation.document is a PDF
+      if (dataObject.document.type !== "application/pdf") {
+        errors.push("The document must be a PDF");
+      }
+
+      // Check if the dataObject.document size is below 2MB
+      const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
+      if (dataObject.document.size > MAX_SIZE) {
+        errors.push("The file size must be below 2MB");
+      }
+    }
+
+    if (errors.length > 0) {
+      alert(errors[0]);
+      if (errors[0] !== formInformation.previousErro) {
+        // dispatch(decrementProgress());
+        formInformation.previousErro = errors[0];
+      }
+    } else {
+      const formData = new FormData(formRef.current);
+
+      // Logging form data
+      const dataObject = {};
+      formData.forEach((value, key) => {
+        dataObject[key] = value;
+      });
+
+      console.log(dataObject);
+
+      alert("Prep request");
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className="application-form">
       <ApplicationHero />
-      <form action="" className="application-form-holder">
+      <form
+        action=""
+        className="application-form-holder"
+        ref={formRef}
+        onKeyDown={handleKeyDown}
+      >
         <div className="form-content">
           <FormProgressBar />
 
           <div className="form-slides">
             <div
               className={`form-inputs-and-btns form-first-part slide ${
-                slides[0].id === currentIndex ? "slide-active" : ""
+                slides[currentIndex].id === 0 ? "slide-active" : ""
               }`}
             >
               <div className="form-input-section">
@@ -402,7 +523,7 @@ export const ApplicationForm = () => {
 
             <div
               className={`form-inputs-and-btns form-second-part slide ${
-                slides[1].id === currentIndex ? "slide-active" : ""
+                slides[currentIndex].id === 1 ? "slide-active" : ""
               }`}
             >
               <div className="form-input-section">
@@ -461,6 +582,65 @@ export const ApplicationForm = () => {
 
                 <button className="continure-btn" onClick={handleSecondNextBtn}>
                   Next
+                </button>
+              </div>
+            </div>
+
+            <div
+              className={`form-inputs-and-btns form-second-part slide ${
+                slides[currentIndex].id === 2 ? "slide-active" : ""
+              }`}
+            >
+              <div className="form-input-section">
+                <div className="actual-inputs actual-inputs-names actual-inputs-school">
+                  <DropDownInput
+                    name={"Study Stack"}
+                    isRequired
+                    values={studyStacks}
+                    value={formInformation.studyStack}
+                    handleUpdate={handleFormInformation}
+                    formProp={"studyStack"}
+                  />
+                </div>
+              </div>
+
+              <div className="form-input-section">
+                <div className="actual-inputs actual-inputs-names">
+                  <TextInputField
+                    name={"Duration"}
+                    isRequired
+                    placeHolder={"How many months is your internship?."}
+                    value={formInformation.durationInMonths}
+                    handleUpdate={handleFormInformation}
+                    formProp={"durationInMonths"}
+                    isNumberInput
+                  />
+                </div>
+              </div>
+
+              <div className="form-input-section">
+                <div className="actual-inputs actual-inputs-names actual-inputs-school">
+                  <FileInput
+                    name={"Supporting documents *"}
+                    limit={2}
+                    placeHolder={
+                      "Upload your cv, support later, written application"
+                    }
+                    value={formInformation.document}
+                    fileName={formInformation.fileName}
+                    handleUpdate={handleFileButton}
+                    formProp={"document"}
+                  />
+                </div>
+              </div>
+
+              <div className="form-input-next-back-btns last-btns">
+                <button className="continure-btn" onClick={handleSecondBackBtn}>
+                  Back
+                </button>
+
+                <button className="continure-btn" onClick={handleSubit}>
+                  Submit
                 </button>
               </div>
             </div>

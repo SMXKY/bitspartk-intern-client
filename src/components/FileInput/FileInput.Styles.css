@@ -1,0 +1,85 @@
+.text-input-icon-and-place-holder {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.text-input-icon-and-place-holder img {
+  height: 1.8rem;
+  width: 1.8rem;
+  margin-right: 0.8rem;
+}
+
+#uploadBtn {
+  display: none;
+}
+
+.text-input-icon-and-place-holder p {
+  color: var(--back-drop-color);
+}
+
+.file-limit-indicator {
+  color: var(--back-drop-color);
+  display: block;
+  font-size: 0.9rem;
+  bottom: -2rem;
+}
+
+@media (max-width: 672px) {
+  .text-input-icon-and-place-holder img {
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-right: 0.4rem;
+  }
+
+  .text-input-icon-and-place-holder p {
+    color: var(--back-drop-color);
+    font-size: 0.9rem;
+  }
+
+  .file-limit-indicator {
+    font-size: 0.75rem;
+    bottom: -1.5rem;
+  }
+}
+
+@media (max-width: 511px) {
+  .text-input-icon-and-place-holder img {
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-right: 0.4rem;
+  }
+
+  .text-input-icon-and-place-holder p {
+    color: var(--back-drop-color);
+    font-size: 0.8rem;
+  }
+
+  .last-btns {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 419px) {
+  .text-input-icon-and-place-holder img {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 0.2rem;
+  }
+
+  .text-input-icon-and-place-holder p {
+    color: var(--back-drop-color);
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 379px) {
+  .text-input-icon-and-place-holder img {
+    display: none;
+  }
+
+  .text-input-icon-and-place-holder p {
+    color: var(--back-drop-color);
+    font-size: 0.6rem;
+  }
+}
