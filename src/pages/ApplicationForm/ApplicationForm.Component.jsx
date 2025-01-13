@@ -605,7 +605,7 @@ export const ApplicationForm = () => {
               <div className="form-input-section">
                 <div className="actual-inputs actual-inputs-names actual-inputs-school">
                   <TextInputField
-                    name={"Internsip report/Defence Topic"}
+                    name={"Research Project Topic"}
                     isRequired
                     placeHolder={"Please enter your defence topic."}
                     value={formInformation.internshipTopic}
@@ -664,7 +664,7 @@ export const ApplicationForm = () => {
                     name={"Supporting documents *"}
                     limit={2}
                     placeHolder={
-                      "Upload your cv, support later, written application"
+                      "Upload your support letter and Evaluation form"
                     }
                     value={formInformation.document}
                     fileName={formInformation.fileName}
