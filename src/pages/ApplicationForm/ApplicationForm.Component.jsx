@@ -311,7 +311,7 @@ export const ApplicationForm = () => {
     });
   };
 
-  const handleSubit = (e) => {
+  const handleSubit = async (e) => {
     e.preventDefault();
     const errors = [];
 
@@ -362,14 +362,42 @@ export const ApplicationForm = () => {
       const formData = new FormData(formRef.current);
 
       // Logging form data
-      const dataObject = {};
-      formData.forEach((value, key) => {
-        dataObject[key] = value;
-      });
+      //   const dataObject = {};
+      //   formData.forEach((value, key) => {
+      //     dataObject[key] = value;
+      //   });
 
-      console.log(dataObject);
+      //   console.log(dataObject);
 
-      alert("Prep request");
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:8000/api/v1/applications",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Form submitted successfully:", data);
+          alert("Application Successfully submited");
+          window.location = "/";
+        } else {
+          const data = await response.json();
+
+          if (
+            data.message ===
+            "Duplicate key error: You are attempting to create a resource(s) with a property of email that is not unique try changing the value of email!"
+          ) {
+            alert("Error: Email already exist in database.");
+          } else {
+            alert(data.message);
+          }
+        }
+      } catch (error) {
+        console.error("Error during form submission:", error);
+      }
     }
   };
 
