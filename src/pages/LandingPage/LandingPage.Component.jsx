@@ -50,7 +50,7 @@ export const LandingPage = () => {
 
       <div className="landing-page-action-btns">
         <ActionButton name={"Apply"} url={"/apply"} />
-        <Link to={"/login"} className="already-an-intern-login-link">
+        <Link to={"/#login"} className="already-an-intern-login-link">
           Already an intern? <span>Login</span>
         </Link>
       </div>
