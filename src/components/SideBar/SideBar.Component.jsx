@@ -20,6 +20,7 @@ export const SideBar = () => {
         url={"/"}
         isOnSideBar
         linkName={"becomeAnIntern"}
+        isToHome
       />
       <br />
       <NavLink text="Login" url={"#login"} isOnSideBar linkName={"login"} />

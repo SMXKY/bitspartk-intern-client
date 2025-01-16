@@ -3,7 +3,14 @@ import "./NavLink.Styles.css";
 import { Link } from "react-router-dom";
 import { toggleNavLInks } from "../../redux/navigation/navigation.slice";
 
-export const NavLink = ({ text, url, isOnSideBar, linkName, sectionId }) => {
+export const NavLink = ({
+  text,
+  url,
+  isOnSideBar,
+  linkName,
+  sectionId,
+  isToHome,
+}) => {
   const navLinkSatus = useSelector((state) => state.navigation.navigationLinks);
   const dispatch = useDispatch();
 
@@ -38,6 +45,15 @@ export const NavLink = ({ text, url, isOnSideBar, linkName, sectionId }) => {
     isOnNavBarAndIsOn = true;
   }
 
+  const hadlePageScrollForHome = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    window.location = "/";
+  };
+
   return (
     <div className="nav-link" onClick={handleLinkToggle}>
       <Link
@@ -45,6 +61,13 @@ export const NavLink = ({ text, url, isOnSideBar, linkName, sectionId }) => {
           isOnNavBarAndIsOn ? "nav-link-on" : ""
         } ${isOnSideBarAndIsOn ? "nav-link-on-side-bar" : ""}`}
         to={url}
+        onClick={
+          isToHome
+            ? hadlePageScrollForHome
+            : () => {
+                console.log("nun");
+              }
+        }
       >
         {text}
       </Link>

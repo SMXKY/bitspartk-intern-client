@@ -61,6 +61,7 @@ export const NavBar = () => {
           text="Become an Intern"
           url={"/"}
           linkName={"becomeAnIntern"}
+          isToHome
         />
         <NavLink text="Login" url={"#login"} linkName={"login"} />
       </div>

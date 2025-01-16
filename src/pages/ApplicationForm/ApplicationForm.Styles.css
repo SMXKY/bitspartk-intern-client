@@ -178,6 +178,10 @@ input[type="radio"]:checked + .radion-label:before {
   background: var(--back-drop-color);
 }
 
+.file-input {
+  margin-top: 2rem;
+}
+
 @media (max-width: 698px) {
   .form-input-next-back-btns {
     display: grid;

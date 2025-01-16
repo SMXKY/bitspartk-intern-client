@@ -106,3 +106,19 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 500px) {
+  .review-content-p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+}
+
+.review-content-p {
+  max-width: 25rem;
+}
+
+.review-content {
+  max-width: 1000rem;
+}

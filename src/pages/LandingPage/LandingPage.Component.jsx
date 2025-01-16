@@ -16,14 +16,14 @@ export const LandingPage = () => {
     {
       content:
         "Never have thought programming could be this easy until Bitspark tech helped me out with their incredible internship.",
-      img: "",
-      name: "Bafon Ngum",
+      img: "https://bitsparktec.com/static/media/engr_bafon.7488ae4a1f959a9f49a7.png",
+      name: "Bafon Precious Ngum",
     },
     {
       content:
-        "Never have thought programming could be this easy until Bitspark tech helped me out with their incredible internship.",
-      img: userImage,
-      name: "Bafon Ngum",
+        "I recently completed an internship of two months at Bitspark. One of the highlights of my internship was the opportunity to work on real-world projects and contribute to the development of cutting-edge technologies. What impressed me most about Bitspark Tech was its commitment to innovation, teamwork, and employee growth.",
+      img: "",
+      name: "Taku Immaculate",
     },
     {
       content:

@@ -61,11 +61,15 @@ const formProgressSlice = createSlice({
 
     incrementProgress: (state, action) => {
       // console.log("incrmented");
-      state.progress += 1;
+      if (state.progress < 15) {
+        state.progress += 1;
+      }
     },
 
     decrementProgress: (state, action) => {
-      state.progress -= 1;
+      if (state.progress > 1) {
+        state.progress -= 1;
+      }
     },
 
     resetProgees: (state, action) => {
