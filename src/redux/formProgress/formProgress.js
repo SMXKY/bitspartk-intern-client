@@ -61,7 +61,7 @@ const formProgressSlice = createSlice({
 
     incrementProgress: (state, action) => {
       // console.log("incrmented");
-      if (state.progress < 15) {
+      if (state.progress < 16) {
         state.progress += 1;
       }
     },
