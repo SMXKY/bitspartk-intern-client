@@ -70,7 +70,7 @@ export const ApplicationForm = () => {
       [formProp]: value,
     }));
 
-    // console.log(formInformation);
+    console.log(formInformation);
   };
 
   const handleRadioButton = (value) => {
@@ -285,10 +285,6 @@ export const ApplicationForm = () => {
       errors.push("A valid intership/defence topic is required");
     }
 
-    if (formInformation.degreeInViewOf !== "B.TECH") {
-      formInformation.degreeInViewOf = "";
-    }
-
     if (errors.length > 0) {
       alert(errors[0]);
       if (errors[0] !== formInformation.previousErro) {
@@ -346,6 +342,10 @@ export const ApplicationForm = () => {
 
     if (!formInformation.studyStack) {
       errors.push("Valid study stack required");
+    }
+
+    if (formInformation.degreeInViewOf !== "B.TECH") {
+      formInformation.degreeInViewOf = "";
     }
 
     if (

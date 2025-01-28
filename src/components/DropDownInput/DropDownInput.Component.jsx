@@ -10,9 +10,7 @@ export const DropDownInput = ({
   isMonthsInput,
   isDegreeInput,
 }) => {
-  if (isDegreeInput) {
-  }
-
+  // console.log(values);
   return (
     <div className="text-input-field">
       <select
