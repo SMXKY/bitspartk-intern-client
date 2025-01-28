@@ -86,4 +86,8 @@
     color: var(--back-drop-color);
     font-size: 0.6rem;
   }
+
+  .hide-file-name {
+    font-size: 0.6rem;
+  }
 }
