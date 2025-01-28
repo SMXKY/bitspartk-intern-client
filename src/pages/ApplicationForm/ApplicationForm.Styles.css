@@ -364,3 +364,6 @@ input[type="radio"]:checked + .radion-label:before {
   bottom: -1.5rem;
   color: red;
 } */
+.hide-project-topic {
+  display: none;
+}

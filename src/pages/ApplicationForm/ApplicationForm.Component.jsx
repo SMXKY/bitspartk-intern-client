@@ -44,6 +44,7 @@ export const ApplicationForm = () => {
     fileName2: "",
     supportDocument: "",
     evaluationForm: "",
+    degreeInViewOf: "HND",
   });
 
   const studyStacks = [
@@ -277,8 +278,15 @@ export const ApplicationForm = () => {
       errors.push("A valid university level is required");
     }
 
-    if (!formInformation.internshipTopic) {
+    if (
+      formInformation.degreeInViewOf === "B.TECH" &&
+      !formInformation.internshipTopic
+    ) {
       errors.push("A valid intership/defence topic is required");
+    }
+
+    if (formInformation.degreeInViewOf !== "B.TECH") {
+      formInformation.degreeInViewOf = "";
     }
 
     if (errors.length > 0) {
@@ -350,9 +358,7 @@ export const ApplicationForm = () => {
       );
     }
 
-    if (!formInformation.evaluationForm) {
-      errors.push("Support evaluation form PDF is required");
-    } else {
+    if (formInformation.evaluationForm) {
       const formData = new FormData(formRef.current);
 
       // Logging form data
@@ -647,6 +653,25 @@ export const ApplicationForm = () => {
 
               <div className="form-input-section">
                 <div className="actual-inputs actual-inputs-names actual-inputs-school">
+                  <DropDownInput
+                    name={"Degree in View of: "}
+                    isRequired
+                    values={["B.sc", "B.TECH", "B.ENG", "M.ENG", "M.sc", "HND"]}
+                    value={formInformation.degreeInViewOf}
+                    handleUpdate={handleFormInformation}
+                    formProp={"degreeInViewOf"}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={`form-input-section ${
+                  formInformation.degreeInViewOf !== "B.TECH"
+                    ? "hide-project-topic"
+                    : ""
+                }`}
+              >
+                <div className="actual-inputs actual-inputs-names actual-inputs-school">
                   <TextInputField
                     name={"Research Project Topic"}
                     isRequired
@@ -654,6 +679,7 @@ export const ApplicationForm = () => {
                     value={formInformation.internshipTopic}
                     handleUpdate={handleFormInformation}
                     formProp={"internshipTopic"}
+                    isDegreeInput
                   />
                 </div>
               </div>
@@ -707,7 +733,7 @@ export const ApplicationForm = () => {
               <div className="form-input-section">
                 <div className="actual-inputs actual-inputs-names actual-inputs-school">
                   <FileInput
-                    name={"Evaluation Form *"}
+                    name={"Evaluation Form"}
                     limit={2}
                     placeHolder={"Upload your evaluation form."}
                     value={formInformation.evaluationForm}
@@ -715,6 +741,7 @@ export const ApplicationForm = () => {
                     handleUpdate={handleFileButton}
                     formProp={"evaluationForm"}
                     inputName={"evaluationForm"}
+                    isRequired={false}
                   />
                 </div>
 

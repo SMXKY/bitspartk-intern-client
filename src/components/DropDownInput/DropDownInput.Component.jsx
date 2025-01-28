@@ -8,7 +8,11 @@ export const DropDownInput = ({
   handleUpdate,
   formProp,
   isMonthsInput,
+  isDegreeInput,
 }) => {
+  if (isDegreeInput) {
+  }
+
   return (
     <div className="text-input-field">
       <select

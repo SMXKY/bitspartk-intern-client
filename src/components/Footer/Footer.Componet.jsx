@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <div className="footer">
       <div className="company-tag">
-        <Link to={"/"}>
+        <Link to={"https://bitsparktec.com/"} target="_blank">
           <img className="logo-img" src={Logo} alt="bitspark-logo" />
         </Link>
         <p>BitSpark Tech Ltd</p>
