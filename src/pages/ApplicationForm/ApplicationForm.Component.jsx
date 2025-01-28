@@ -345,7 +345,7 @@ export const ApplicationForm = () => {
     }
 
     if (formInformation.degreeInViewOf !== "B.TECH") {
-      formInformation.degreeInViewOf = "";
+      formInformation.internshipTopic = "";
     }
 
     if (
@@ -465,6 +465,57 @@ export const ApplicationForm = () => {
     if (e.key === "Enter") {
       e.preventDefault();
     }
+  };
+
+  const checkIfAllInputsAreFileedForm1 = () => {
+    if (
+      !formInformation.firstName ||
+      !formInformation.lastName ||
+      !formInformation.gender ||
+      !formInformation.year ||
+      !formInformation.month ||
+      !formInformation.day ||
+      !formInformation.phoneNumber ||
+      !formInformation.email
+    ) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const checkIfAllInputsAreFileedForm2 = () => {
+    if (
+      !formInformation.school ||
+      !formInformation.department ||
+      !formInformation.level ||
+      !formInformation.degreeInViewOf
+    ) {
+      return false;
+    }
+
+    if (
+      formInformation.degreeInViewOf === "B.TECH" &&
+      !formInformation.internshipTopic
+    ) {
+      return false;
+    }
+
+    console.log(formInformation);
+
+    return true;
+  };
+
+  const checkIfAllInputsAreFileedFormSubmit = () => {
+    if (
+      !formInformation.studyStack ||
+      !formInformation.durationInMonths ||
+      !formInformation.supportDocument
+    ) {
+      return false;
+    }
+
+    return true;
   };
 
   return (
@@ -605,9 +656,20 @@ export const ApplicationForm = () => {
                 </div>
               </div>
 
-              <button className="continure-btn" onClick={handleFirstNextButton}>
-                Continue
-              </button>
+              <div
+                className={`continure-btn-holder ${
+                  checkIfAllInputsAreFileedForm1() ? "" : "mute-btn-checker"
+                }`}
+              >
+                <button
+                  className={`continure-btn ${
+                    checkIfAllInputsAreFileedForm1() ? "" : "mute-btn"
+                  }`}
+                  onClick={handleFirstNextButton}
+                >
+                  Continue
+                </button>
+              </div>
             </div>
 
             <div
@@ -692,9 +754,20 @@ export const ApplicationForm = () => {
                   Back
                 </button>
 
-                <button className="continure-btn" onClick={handleSecondNextBtn}>
-                  Next
-                </button>
+                <div
+                  className={`continure-btn-holder ${
+                    checkIfAllInputsAreFileedForm2() ? "" : "mute-btn-checker"
+                  }`}
+                >
+                  <button
+                    className={`continure-btn ${
+                      checkIfAllInputsAreFileedForm2() ? "" : "mute-btn"
+                    }`}
+                    onClick={handleSecondNextBtn}
+                  >
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -769,12 +842,22 @@ export const ApplicationForm = () => {
                   Back
                 </button>
 
-                <button
-                  className="continure-btn submit-btn"
-                  onClick={handleSubit}
+                <div
+                  className={`continure-btn-holder ${
+                    checkIfAllInputsAreFileedFormSubmit()
+                      ? ""
+                      : "mute-btn-checker"
+                  }`}
                 >
-                  Submit
-                </button>
+                  <button
+                    className={`continure-btn submit-btn ${
+                      checkIfAllInputsAreFileedFormSubmit() ? "" : "mute-btn"
+                    }`}
+                    onClick={handleSubit}
+                  >
+                    Submit
+                  </button>
+                </div>
               </div>
             </div>
           </div>

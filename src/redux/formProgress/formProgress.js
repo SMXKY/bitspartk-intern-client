@@ -62,6 +62,11 @@ const formProgressSlice = createSlice({
     incrementProgress: (state, action) => {
       // console.log("incrmented");
       if (state.progress < 16) {
+        //since we made th evaluation form opitonal
+        if (state.progress === 14) {
+          // alert(state.progress);
+          state.progress = 15;
+        }
         state.progress += 1;
       }
     },

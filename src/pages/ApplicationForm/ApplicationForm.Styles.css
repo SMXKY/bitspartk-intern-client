@@ -367,3 +367,14 @@ input[type="radio"]:checked + .radion-label:before {
 .hide-project-topic {
   display: none;
 }
+
+.mute-btn {
+  background: #e7e7e773;
+  color: var(--back-drop-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.mute-btn-checker {
+  cursor: not-allowed;
+}
