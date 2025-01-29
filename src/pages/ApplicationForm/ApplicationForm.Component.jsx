@@ -448,12 +448,17 @@ export const ApplicationForm = () => {
           const data = await response.json();
           console.log("Form submitted successfully:", data);
           // alert("Application Successfully submited");
-          dispatch({
-            message: "Application Successfully submited",
-            type: "success",
-          });
+          dispatch(
+            alertUser({
+              message: "Application Successfully submited",
+              type: "success",
+            })
+          );
           setLoading(false);
-          window.location = "/";
+          setTimeout(() => {
+            dispatch(hideAlert());
+            window.location = "/";
+          }, 3000);
         } else {
           const data = await response.json();
 
@@ -467,10 +472,18 @@ export const ApplicationForm = () => {
                 message: "Email already exist in database",
               })
             );
+
+            setTimeout(() => {
+              dispatch(hideAlert());
+            }, 3000);
             // alert("Error: Email already exist in database.");
           } else {
             dispatch(alertUser({ type: "error", message: data.message }));
             // alert(data.message);
+
+            setTimeout(() => {
+              dispatch(hideAlert());
+            }, 3000);
           }
 
           setLoading(false);
