@@ -286,7 +286,8 @@ export const ApplicationForm = () => {
     }
 
     if (
-      formInformation.degreeInViewOf === "B.TECH" &&
+      (formInformation.degreeInViewOf === "B.TECH" ||
+        formInformation.degreeInViewOf === "MEng") &&
       !formInformation.internshipTopic
     ) {
       errors.push("A valid intership/defence topic is required");
@@ -355,7 +356,10 @@ export const ApplicationForm = () => {
       errors.push("Valid study stack required");
     }
 
-    if (formInformation.degreeInViewOf !== "B.TECH") {
+    if (
+      formInformation.degreeInViewOf !== "B.TECH" ||
+      formInformation.degreeInViewOf !== "MEng"
+    ) {
       formInformation.internshipTopic = "";
     }
 
@@ -534,7 +538,8 @@ export const ApplicationForm = () => {
     }
 
     if (
-      formInformation.degreeInViewOf === "B.TECH" &&
+      (formInformation.degreeInViewOf === "B.TECH" ||
+        formInformation.degreeInViewOf === "MEng") &&
       !formInformation.internshipTopic
     ) {
       return false;
@@ -775,9 +780,9 @@ export const ApplicationForm = () => {
 
               <div
                 className={`form-input-section ${
-                  formInformation.degreeInViewOf !== "B.TECH"
-                    ? "hide-project-topic"
-                    : ""
+                  ["B.TECH", "MEng"].includes(formInformation.degreeInViewOf)
+                    ? ""
+                    : "hide-project-topic"
                 }`}
               >
                 <div className="actual-inputs actual-inputs-names actual-inputs-school">
@@ -855,7 +860,7 @@ export const ApplicationForm = () => {
                   <FileInput
                     name={"Evaluation Form"}
                     limit={2}
-                    placeHolder={"Upload your evaluation form."}
+                    placeHolder={"Upload your evaluation form in pdf format."}
                     value={formInformation.evaluationForm}
                     fileName={formInformation.fileName1}
                     handleUpdate={handleFileButton}
@@ -871,7 +876,7 @@ export const ApplicationForm = () => {
                   <FileInput
                     name={"Support Letter *"}
                     limit={2}
-                    placeHolder={"Upload your support letter."}
+                    placeHolder={"Upload your support letter in pdf format."}
                     value={formInformation.supportDocument}
                     fileName={formInformation.fileName2}
                     handleUpdate={handleFileButton2}
