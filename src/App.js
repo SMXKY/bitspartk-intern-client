@@ -6,12 +6,19 @@ import { LandingPage } from "./pages/LandingPage/LandingPage.Component";
 import { SideBar } from "./components/SideBar/SideBar.Component";
 import { Footer } from "./components/Footer/Footer.Componet";
 import { ApplicationForm } from "./pages/ApplicationForm/ApplicationForm.Component";
+import { Alert } from "./components/Alert/Alert.Component";
 
 function App() {
   return (
     <div>
       <Router>
         <NavBar />
+        <Alert
+          message={
+            "Invalid input, name must be altleast 58969 fdsfsafdadsfasfdsadfsadf charaters long!"
+          }
+          type={"error"}
+        />
         <SideBar />
         <div>
           <Routes>
