@@ -3,8 +3,17 @@ import ErrorIcon from "../../assets/error-icon.png";
 import AlertIcon from "../../assets/alert-icon.png";
 import WarningIcon from "../../assets/waringin-icon.png";
 import SuccessIcon from "../../assets/success-icon.png";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { hideAlert } from "../../redux/Alert/Alert.Slice";
 
-export const Alert = ({ message, type }) => {
+export const Alert = () => {
+  const alertInfo = useSelector((state) => state.alert);
+  const dispatch = useDispatch();
+
+  const message = alertInfo.message;
+  const type = alertInfo.type;
+
   const closeImg = require(`../../assets/Close-${type}.png`);
 
   const specifics = {
@@ -31,7 +40,7 @@ export const Alert = ({ message, type }) => {
   //   alert(type);
 
   return (
-    <div className="alert-holder">
+    <div className={`alert-holder ${alertInfo.isVisible ? "show-alert" : ""}`}>
       <div className={`alert ${specifics.holderClass}`}>
         <div className="alert-information">
           <div className={`alert-image ${specifics.iconHolcderClass}`}>
@@ -41,7 +50,13 @@ export const Alert = ({ message, type }) => {
           <p className="alert-text">{message}</p>
         </div>
 
-        <button className={`close-alert-button ${specifics.closeButtonClass}`}>
+        <button
+          className={`close-alert-button ${specifics.closeButtonClass}`}
+          onClick={() => {
+            // dispatch(hideAlert());
+            console.log("hide alert here");
+          }}
+        >
           <img src={closeImg} alt="close-icon" />
         </button>
       </div>

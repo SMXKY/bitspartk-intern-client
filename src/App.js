@@ -13,12 +13,7 @@ function App() {
     <div>
       <Router>
         <NavBar />
-        <Alert
-          message={
-            "Invalid input, name must be altleast 58969 fdsfsafdadsfasfdsadfsadf charaters long!"
-          }
-          type={"error"}
-        />
+        <Alert />
         <SideBar />
         <div>
           <Routes>

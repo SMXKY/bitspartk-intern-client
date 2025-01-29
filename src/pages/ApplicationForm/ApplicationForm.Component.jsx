@@ -3,6 +3,8 @@ import { ApplicationHero } from "../../components/ApplicationHero/ApplicationHer
 import { FormProgressBar } from "../../components/FormProgressBar/FormProgressBar.Component";
 import { TextInputField } from "../../components/TextInputField/TextInputField.Component";
 import { useSelector } from "react-redux";
+import { alertUser, hideAlert } from "../../redux/Alert/Alert.Slice";
+
 // import { LandingPageHero } from "../../components/LandingPageHero/LandingPageHero.Component";
 import "./ApplicationForm.Styles.css";
 import { useDispatch } from "react-redux";
@@ -214,7 +216,12 @@ export const ApplicationForm = () => {
 
     // Display errors or proceed with form submission
     if (errors.length > 0) {
-      alert(errors[0]);
+      dispatch(alertUser({ type: "error", message: errors[0] }));
+
+      setTimeout(() => {
+        dispatch(hideAlert());
+      }, 5000);
+
       if (errors[0] !== formInformation.previousErro) {
         dispatch(decrementProgress());
         formInformation.previousErro = errors[0];
@@ -286,7 +293,11 @@ export const ApplicationForm = () => {
     }
 
     if (errors.length > 0) {
-      alert(errors[0]);
+      dispatch(alertUser({ type: "error", message: errors[0] }));
+      setTimeout(() => {
+        dispatch(hideAlert());
+      }, 5000);
+
       if (errors[0] !== formInformation.previousErro) {
         dispatch(decrementProgress());
         formInformation.previousErro = errors[0];
@@ -405,7 +416,11 @@ export const ApplicationForm = () => {
     }
 
     if (errors.length > 0) {
-      alert(errors[0]);
+      dispatch(alertUser({ type: "error", message: errors[0] }));
+      setTimeout(() => {
+        dispatch(hideAlert());
+      }, 5000);
+
       if (errors[0] !== formInformation.previousErro) {
         // dispatch(decrementProgress());
         formInformation.previousErro = errors[0];
