@@ -447,7 +447,11 @@ export const ApplicationForm = () => {
         if (response.ok) {
           const data = await response.json();
           console.log("Form submitted successfully:", data);
-          alert("Application Successfully submited");
+          // alert("Application Successfully submited");
+          dispatch({
+            message: "Application Successfully submited",
+            type: "success",
+          });
           setLoading(false);
           window.location = "/";
         } else {
@@ -457,9 +461,16 @@ export const ApplicationForm = () => {
             data.message ===
             "Duplicate key error: You are attempting to create a resource(s) with a property of email that is not unique try changing the value of email!"
           ) {
-            alert("Error: Email already exist in database.");
+            dispatch(
+              alertUser({
+                type: "error",
+                message: "Email already exist in database",
+              })
+            );
+            // alert("Error: Email already exist in database.");
           } else {
-            alert(data.message);
+            dispatch(alertUser({ type: "error", message: data.message }));
+            // alert(data.message);
           }
 
           setLoading(false);
@@ -733,7 +744,15 @@ export const ApplicationForm = () => {
                   <DropDownInput
                     name={"Degree in View of: "}
                     isRequired
-                    values={["B.sc", "B.TECH", "B.ENG", "M.ENG", "M.sc", "HND"]}
+                    values={[
+                      "BSc",
+                      "MSc",
+                      "B.TECH",
+                      "M.TECH",
+                      "BEng",
+                      "MEng",
+                      "HND",
+                    ]}
                     value={formInformation.degreeInViewOf}
                     handleUpdate={handleFormInformation}
                     formProp={"degreeInViewOf"}
