@@ -3,12 +3,18 @@ import defaultImg from "../../assets/user-default-img.jpg";
 import { useState } from "react";
 
 export const Review = ({ content, img, name }) => {
+  // if (!content) {
+  //   alert(name);
+  // }
+
+  console.log(content);
+
   const [textContent, setTextContent] = useState(content);
 
   let isSplit = false;
 
-  if (textContent.split("").length > 160) {
-    setTextContent(textContent.split("").slice(0, 135).join("") + " ...");
+  if (textContent && textContent.split("").length > 155) {
+    setTextContent(textContent.split("").slice(0, 125).join("") + " ...");
     isSplit = true;
     console.log(isSplit);
   }

@@ -7,12 +7,12 @@ import { Review } from "../../components/Review/Review.Component";
 import userImage from "../../assets/arya.jpg";
 import { useDispatch } from "react-redux";
 import { resetProgees } from "../../redux/formProgress/formProgress";
+import { useState, useEffect } from "react";
 
 export const LandingPage = () => {
   const dispatch = useDispatch();
-  dispatch(resetProgees());
 
-  const reviews = [
+  const reviewsPlaceholder = [
     {
       content:
         "Never have thought programming could be this easy until Bitspark tech helped me out with their incredible internship.",
@@ -44,6 +44,31 @@ export const LandingPage = () => {
       name: "Bafon Ngum",
     },
   ];
+
+  const [reviews, setReviews] = useState(reviewsPlaceholder);
+
+  useEffect(() => {
+    dispatch(resetProgees());
+
+    const getReviews = async () => {
+      // return await data.data;
+      try {
+        const response = await fetch("http://localhost:8000/api/v1/reviews", {
+          method: "GET",
+        });
+
+        const data = await response.json();
+        console.log("DATAAAAAA", data.data);
+        setReviews(data.data || reviewsPlaceholder);
+      } catch (err) {
+        console.log("There was and error fetching the reviews: ", err);
+        setReviews(reviewsPlaceholder);
+      }
+    };
+
+    getReviews();
+  }, [dispatch]);
+
   return (
     <div style={{ maxWidth: "100vw", overflow: "hidden" }}>
       <LandingPageHero />
@@ -58,8 +83,13 @@ export const LandingPage = () => {
         <SectionHeader name={"Reviews"} />
         <div className="hold-reviews">
           <div className="actual-reviews">
-            {reviews.map(({ name, img, content }) => (
-              <Review name={name} img={img} content={content} />
+            {reviews.map(({ reviewerName, img, review, _id }) => (
+              <Review
+                name={reviewerName}
+                img={img}
+                content={review}
+                key={_id}
+              />
             ))}
           </div>
         </div>
