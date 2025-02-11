@@ -14,31 +14,31 @@ export const LandingPage = () => {
 
   const reviewsPlaceholder = [
     {
-      content:
+      review:
         "Never have thought programming could be this easy until Bitspark tech helped me out with their incredible internship.",
       img: "https://bitsparktec.com/static/media/engr_bafon.7488ae4a1f959a9f49a7.png",
-      name: "Bafon Precious Ngum",
+      reviewerName: "Bafon Precious Ngum",
     },
     {
-      content:
+      review:
         "I recently completed an internship of two months at Bitspark. One of the highlights of my internship was the opportunity to work on real-world projects and contribute to the development of cutting-edge technologies. What impressed me most about Bitspark Tech was its commitment to innovation, teamwork, and employee growth.",
       img: "",
-      name: "Taku Immaculate",
+      reviewerName: "Taku Immaculate",
     },
     {
-      content:
+      review:
         "Never have thought programming could be this easy until Bitspark tech helped me out with their incredible internship.",
       img: userImage,
-      name: "Bafon Ngum",
+      reviewerName: "Bafon Ngum",
     },
     {
-      content:
+      review:
         "Never have thought programming could be this easy until Bitspark tech helped me out with their incredible internship.",
       img: userImage,
-      name: "Bafon Ngum",
+      reviewerName: "Bafon Ngum",
     },
     {
-      content:
+      review:
         "Never have thought programming could be this easy until Bitspark tech helped me out with their incredible internship.",
       img: "",
       name: "Bafon Ngum",
