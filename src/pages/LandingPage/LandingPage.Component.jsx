@@ -53,7 +53,7 @@ export const LandingPage = () => {
     const getReviews = async () => {
       // return await data.data;
       try {
-        const response = await fetch("http://localhost:8000/api/v1/reviews", {
+        const response = await fetch("/api/v1/reviews", {
           method: "GET",
         });
 
