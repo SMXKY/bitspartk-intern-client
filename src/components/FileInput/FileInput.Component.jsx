@@ -44,8 +44,8 @@ export const FileInput = ({
         {name}
         {isRequired ? " *" : ""}
       </span>
-      <span className="error-message">error</span>
-      <span className="error-message file-limit-indicator hide-file-name">
+      {/* <span className="error-message">error</span> */}
+      <span className="error-file-input file-limit-indicator hide-file-name">
         {fileName ? `Uploaded: ${fileName}` : ` Max size should be ${limit}MB`}
       </span>
     </label>

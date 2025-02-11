@@ -220,7 +220,7 @@ export const ApplicationForm = () => {
 
       setTimeout(() => {
         dispatch(hideAlert());
-      }, 5000);
+      }, 10000);
 
       if (errors[0] !== formInformation.previousErro) {
         dispatch(decrementProgress());
@@ -641,7 +641,7 @@ export const ApplicationForm = () => {
                   <TextInputField
                     name={"Year"}
                     isRequired
-                    placeHolder={"Birth year"}
+                    placeHolder={"Birth year e.g 2005"}
                     min={1900}
                     max={9999}
                     isNumberInput
@@ -653,7 +653,7 @@ export const ApplicationForm = () => {
                   <TextInputField
                     name={"Month"}
                     isRequired
-                    placeHolder={"Birth month"}
+                    placeHolder={"Birth month e.g 8"}
                     min={1}
                     max={12}
                     isNumberInput
@@ -665,7 +665,7 @@ export const ApplicationForm = () => {
                   <TextInputField
                     name={"Day"}
                     isRequired
-                    placeHolder={"Birth day"}
+                    placeHolder={"Birth day e.g 25"}
                     min={1}
                     max={31}
                     isNumberInput

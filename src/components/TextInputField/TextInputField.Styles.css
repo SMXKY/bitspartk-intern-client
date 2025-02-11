@@ -39,6 +39,10 @@
   bottom: -1.3rem;
   left: 0;
   font-size: 0.8rem;
+  /* display: none; */
+}
+
+.hide-errors {
   display: none;
 }
 
@@ -46,6 +50,14 @@
   .text-input-field input::placeholder {
     color: var(--back-drop-color);
     font-size: 0.8rem;
+  }
+
+  .error-message,
+  .error-file-input {
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+    bottom: -1.5rem;
+    /* background-color: blue; */
   }
 }
 

@@ -30,7 +30,7 @@ export const DropDownInput = ({
         {name}
         {isRequired ? " *" : ""}
       </span>
-      <span className="error-message">error</span>
+      {/* <span className="error-message">error</span> */}
     </div>
   );
 };

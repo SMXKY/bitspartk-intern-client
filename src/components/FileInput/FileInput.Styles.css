@@ -29,6 +29,14 @@
   display: none;
 }
 
+.error-file-input {
+  position: absolute;
+  bottom: -1.3rem;
+  left: 0;
+  font-size: 0.8rem;
+  /* display: none; */
+}
+
 @media (max-width: 672px) {
   .text-input-icon-and-place-holder img {
     height: 1.6rem;
