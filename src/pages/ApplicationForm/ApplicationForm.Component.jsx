@@ -297,7 +297,7 @@ export const ApplicationForm = () => {
       dispatch(alertUser({ type: "error", message: errors[0] }));
       setTimeout(() => {
         dispatch(hideAlert());
-      }, 5000);
+      }, 10000);
 
       if (errors[0] !== formInformation.previousErro) {
         dispatch(decrementProgress());
@@ -423,7 +423,7 @@ export const ApplicationForm = () => {
       dispatch(alertUser({ type: "error", message: errors[0] }));
       setTimeout(() => {
         dispatch(hideAlert());
-      }, 5000);
+      }, 10000);
 
       if (errors[0] !== formInformation.previousErro) {
         // dispatch(decrementProgress());
@@ -462,7 +462,7 @@ export const ApplicationForm = () => {
           setTimeout(() => {
             dispatch(hideAlert());
             window.location = "/";
-          }, 3000);
+          }, 10000);
         } else {
           const data = await response.json();
 
