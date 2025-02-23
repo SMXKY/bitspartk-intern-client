@@ -856,7 +856,7 @@ export const ApplicationForm = () => {
               </div>
 
               <div className="form-input-section">
-                <div className="actual-inputs actual-inputs-names actual-inputs-school">
+                {/* <div className="actual-inputs actual-inputs-names actual-inputs-school">
                   <FileInput
                     name={"Evaluation Form"}
                     limit={2}
@@ -870,7 +870,7 @@ export const ApplicationForm = () => {
                   />
                 </div>
 
-                <br />
+                <br /> */}
 
                 <div className="actual-inputs actual-inputs-names actual-inputs-school btn-support">
                   <FileInput
