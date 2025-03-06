@@ -53,10 +53,6 @@ export const Alert = () => {
         <button
           className={`close-alert-button ${specifics.closeButtonClass}`}
           onClick={() => {
-            for (let i = 1; i < 99999; i++) {
-              clearTimeout(i);
-            }
-
             dispatch(hideAlert());
             // console.log("hide alert here");
           }}
