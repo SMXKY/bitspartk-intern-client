@@ -52,6 +52,7 @@ export const ApplicationForm = () => {
   const studyStacks = [
     "Backend Web Development",
     "Frontend Web Development",
+    "Programming Foundations with C, C++, and Python",
     "Mobile Development",
     "Cyber Security",
     "Desktop Development",
@@ -394,30 +395,28 @@ export const ApplicationForm = () => {
       }
     }
 
-    console.log(formInformation);
+    // if (!formInformation.supportDocument) {
+    //   errors.push("Support support letter PDF is required");
+    // } else {
+    //   const formData = new FormData(formRef.current);
 
-    if (!formInformation.supportDocument) {
-      errors.push("Support support letter PDF is required");
-    } else {
-      const formData = new FormData(formRef.current);
+    //   // Logging form data
+    //   const dataObject = {};
+    //   formData.forEach((value, key) => {
+    //     dataObject[key] = value;
+    //   });
 
-      // Logging form data
-      const dataObject = {};
-      formData.forEach((value, key) => {
-        dataObject[key] = value;
-      });
+    //   // Check if the formInformation.supportDocument is a PDF
+    //   if (dataObject.supportDocument.type !== "application/pdf") {
+    //     errors.push("The support leter must be a PDF");
+    //   }
 
-      // Check if the formInformation.supportDocument is a PDF
-      if (dataObject.supportDocument.type !== "application/pdf") {
-        errors.push("The support leter must be a PDF");
-      }
-
-      // Check if the dataObject.supportDocument size is below 2MB
-      const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
-      if (dataObject.supportDocument.size > MAX_SIZE) {
-        errors.push("The file size must be below 2MB");
-      }
-    }
+    //   // Check if the dataObject.supportDocument size is below 2MB
+    //   const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
+    //   if (dataObject.supportDocument.size > MAX_SIZE) {
+    //     errors.push("The file size must be below 2MB");
+    //   }
+    // }
 
     if (errors.length > 0) {
       dispatch(alertUser({ type: "error", message: errors[0] }));
@@ -553,8 +552,8 @@ export const ApplicationForm = () => {
   const checkIfAllInputsAreFileedFormSubmit = () => {
     if (
       !formInformation.studyStack ||
-      !formInformation.durationInMonths ||
-      !formInformation.supportDocument
+      !formInformation.durationInMonths
+      // || !formInformation.supportDocument
     ) {
       return false;
     }
@@ -872,7 +871,7 @@ export const ApplicationForm = () => {
 
                 <br /> */}
 
-                <div className="actual-inputs actual-inputs-names actual-inputs-school btn-support">
+                {/* {                <div className="actual-inputs actual-inputs-names actual-inputs-school btn-support">
                   <FileInput
                     name={"Support Letter *"}
                     limit={2}
@@ -883,7 +882,7 @@ export const ApplicationForm = () => {
                     formProp={"supportDocument"}
                     inputName={"supportDocument"}
                   />
-                </div>
+                </div>} */}
               </div>
 
               <div className="form-input-next-back-btns last-btns">
